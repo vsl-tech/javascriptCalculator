@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>Calculator</title>
+	
+		<script language="JavaScript">
+			function calci()
+			{
+				val1 = document.f1.t1.value
+				val2 = document.f1.t2.value
+				val1 = parseInt(val1)
+				val2 = parseInt(val2)
+				e = document.getElementById("op")
+				val = e.options[e.selectedIndex].value
+				if(val == "add")
+					ans = parseInt(val1) + parseInt(val2)
+				else if(val == "sub")
+					ans = parseInt(val1) - parseInt(val2)
+				else if(val == "mult")
+					ans = parseInt(val1) * parseInt(val2)
+				else if(val == "divide")
+					ans = parseInt(val1) / parseInt(val2)
+				else if(val == "power")
+					ans = Math.pow(val1,val2)
+					
+				document.getElementById("t3").value = ans
+				
+				}
+		</script>
+	</head>
+	<body background="bg.jpg">		
+		<form name=f1>
+			<h1 align=center>Calculator</h1>
+			<h6 align=center>&copy;VSL Creations</h6><hr><br><br>
+			<p align=center>
+			<input type=text name=t1>
+			<select id="op">
+				<option value="add">ADD(+)</option>
+				<option value="sub">SUBTRACT(-)</option>
+				<option value="mult">MULTIPLY(*)</option>
+				<option value="divide">DIVIDE(/)</option>
+				<option value="power">POWER(^)</option>
+			</select>
+			<input type=text name=t2><br><br>
+			<input type=button name="b1" value="EQUALS" onClick=calci()><br><br>
+			<textarea rows=5 name=t3 id=t3></textarea>
+			
+		</form>
+		
+	</body>
+</html>
